@@ -1,7 +1,11 @@
 <template>
-  <footer class= "footer">
-      <h5>Copyright Михаил Мамонов</h5>
-      </footer>
+<div class="page-footer font-small blue">
+
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  </div>
+
+</div>
 </template>
 
 <script>
@@ -11,21 +15,6 @@ export default {
 </script>
 
 <style>
-.footer {
-    grid-area: footer;
-    background: -moz-linear-gradient(top, red, FFFFFF);
-    background: -webkit-gradient(linear, left top, left bottom, from(red), to(white));
-    padding: 5px;
-    margin-top: 0;
-    margin-bottom: 0;
-    text-align: center;
-    width: 100%;
-    display: inline-block;
-    -moz-box-shadow: 1px 1px 3px #292929;
-    -webkit-box-shadow: 1px 1px 3px #292929;
-    box-shadow: 1px 1px 3px #292929;
-    color: #454545;
-    text-shadow: 0 1px 0 white;
-}
+
 </style>
 

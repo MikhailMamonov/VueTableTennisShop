@@ -6,6 +6,7 @@
     <li>
     <router-link to="/rankings">Рейтинг инвентаря</router-link>
     </li>
+    
     <li>
           <router-link to="/"> Домой</router-link>
   </li>
@@ -37,7 +38,6 @@ export default {
   height: 700px;
   position: sticky;
   top: 80px;
-  
 }
 
 .sidebar__nav li {

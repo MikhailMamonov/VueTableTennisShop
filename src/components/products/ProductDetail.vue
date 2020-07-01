@@ -15,7 +15,7 @@ export default {
     name: "product-details",
     methods:{
       backToProducts: function(){
-            debugger;
+            
             this.$router.push({
                 name: "products"
       });

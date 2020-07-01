@@ -1,6 +1,6 @@
 <template>
   <div class="ranking__wrapper">
-      
+    <div>
     <ul class="rankingNavbar">
         <li>{{selectedCategory.name}}</li>
       <li>
@@ -10,17 +10,19 @@
               <a>{{i.name}}</a>
               </li>
         </ul>
-
       </li>
     </ul>
-    <ranking-content :calegory="selectedCategory"></ranking-content>
+    </div>
+    <div class="rankingContent">
+      <ranking-content :category=selectedCategory />
+    </div>
     
   </div>
 </template>
 
 <script>
-import RankingContent from "./../components/rankings/RankingContent"
 
+import RankingContent from "./../components/rankings/RankingContent"
 export default {
   name: "allRankings",
   components: {RankingContent},
@@ -47,24 +49,26 @@ export default {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  
+  height: 100%;
   background-color: aquamarine;
 }
 
 .rankingNavbar{
   background: darkorange;
-  display: inherit;
   list-style: none;
-  justify-content: flex-end;
   margin: 0;
-  position: relative;
+}
+
+.rankingContent{
+  background: burlywood;
+  flex-grow: 1;
+  border: 3px solid rgba(0,0,0,.2);
 }
 
 .dropdown {
   visibility: hidden;
   opacity: 0;
   min-width: 5rem;
-  position: absolute;
   transition: all 0.5s ease;
   margin-top: 1rem;
   left: 0;
@@ -113,8 +117,7 @@ export default {
   color: #fff;
 }
 
-.rankingNavbar > li:hover > ul,
-.dropdown:hover {
+.rankingNavbar > li:hover > ul {
   visibility: visible;
   opacity: 1;
   display: block;
@@ -122,14 +125,11 @@ export default {
 
 .dropdown li {
   clear: both;
-  width: 100%;
 }
 
 .dropdown li a {
   text-decoration: none;
   color: #fff;
 }
-.rankingContent {
-  background-color: azure;
-}
+
 </style>

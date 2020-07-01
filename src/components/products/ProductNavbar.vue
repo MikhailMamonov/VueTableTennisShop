@@ -39,19 +39,19 @@ export default {
   },
   methods: {
     selectCategory: function(event, id) {
-     debugger;
+     
       this.$store.commit("setCategory", id);
       this.$store.commit("setBrand", 0);
 
     },
     selectBrand: function(event, id) {
-      debugger;
+      
       this.$store.commit("setBrand", id);
     }
   },
   computed:{
     categoryText: function() {
-      debugger;
+      
       return this.$store.state.categoryText;
     }
   }
@@ -62,9 +62,7 @@ export default {
 
 
 .nav__wrapper  {
-  margin: 0;
-  /* Обнуляем значение отступов */
-  padding: 4px;
+  
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -74,13 +72,12 @@ export default {
 
 .nli {
   display: inline-block;
-  /* Отображать как строчный элемент */
+  
   margin-right: 5px;
-  /* Отступ слева */
+  
   border: 1px solid #000;
-  /* Рамка вокруг текста */
+  
   padding: 3px;
-  /* Поля вокруг текста */
   flex-basis: 20%;
   height: 248px;
   width: max-content;
@@ -107,7 +104,7 @@ export default {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* remove extra space below image */
+  
 }
   
 .content__navigation {

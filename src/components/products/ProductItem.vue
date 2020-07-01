@@ -17,7 +17,7 @@ export default {
     },
     methods: {
         editProduct: function(event, id) {
-            debugger;
+            
             this.$router.push({
                 name: "productDetails",
                 params: { id: id }

@@ -27,13 +27,13 @@ export default {
           this.$store.state.displayCategory === category ||
           this.$store.state.displayCategory === 0
       );
-      debugger;
+      
       filteredProducts = filteredProducts.filter(
         ({ brand }) =>
           this.$store.state.displayBrand === brand ||
           this.$store.state.displayBrand === 0
       );
-      debugger;
+      
       return filteredProducts;
     },
   },
@@ -51,7 +51,7 @@ export default {
 .content__main {
   height: 100%;
   list-style-type: none;
-  background: rgb(38, 38, 209);
+  background: rgb(204, 227, 238);;
   text-align: center;
   margin-left: 0;
   margin-top: 100px;

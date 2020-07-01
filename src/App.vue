@@ -1,118 +1,112 @@
 <template>
-<div id ="app">
-     <div class ="parallax">
-  <div class="parallax__group">
-    <div class="parallax__layer classes.parallax__layer__back" >
-      <div class = "parallax__background"/>
-    </div>
-    <div class="parallax__layer parallax__layer__base">
-    <div class="container">
-  <header>
-  <Header/>
-  </header>
+  <div id="app">
+              <Header />
+              
+    <div class="app_wrapper">
 
-  <nav class = "main__nav">
-  <Navbar/>
-  </nav>
-
-  <main>
-     <router-view></router-view>
-  </main>
-
-  <aside>
-  </aside>
-  <Footer/>
-</div>
+      <nav>
+        <div class="well">
+          <div class="google-translate-sidebar__title">
+            <img
+              src="/images/layout/language-icon.png"
+              class="google-translate-sidebar-icon"
+            />
+            Translate
+          </div>
+        </div>
+      </nav>
+      <main>
+        <router-view></router-view>
+      </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   </div>
-  <div class="parallax__group">
-    ...
-  </div>
-</div>
-</div>
 </template>
 
 <script>
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Navbar from './components/Navbar'
-
-
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+//import Navbar from './components/Navbar'
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Header,
     Footer,
-    Navbar
-  }
-}
+    // Navbar
+  },
+};
 </script>
 
 <style>
-.container {
-    display: grid;
-    height: 100%;
-    grid-template-areas: "header header header" "nav content side" "footer footer footer";
-    grid-template-columns: 250px 1fr 240px;
-    grid-template-rows: auto 1fr auto;
+body {
+  margin: 0;
+  background-color: #fff;
 }
 
-header {
-    grid-area: header;
-    justify-content: center;
-    position: sticky;
-    display: inline-block;
-    top: 0;
+.well {
+  margin: 10px 0;
+  background-color: #eee;
+  padding: 15px 15px;
+  border-radius: 8px;
 }
 
-.main__nav {
-    background: #000;
-    grid-area: nav;
-    display: grid;
-    position: sticky;
+.google-translate-sidebar__title {
+  font-weight: bold;
+  font-size: 19px;
+  text-align: left;
+  padding-left: 8px;
+}
 
+.app_wrapper {
+  display: grid;
+  height: 100%;
+  grid-template-areas: "header header" "nav content" "footer footer ";
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 50px auto 50px;
+  background-color: #fff;
+}
+
+
+
+footer {
+  grid-area: footer;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(red),
+    to(white)
+  );
+  padding: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  box-shadow: 1px 1px 3px #292929;
+  color: #454545;
+  text-shadow: 0 1px 0 white;
+}
+
+
+nav {
+  background-color: #fff;
+  grid-area: nav;
+  min-height: 500px;
 }
 
 main {
-    grid-area: content;
-    background-color: #FDF4E3;
+  grid-area: content;
+  background-color: #fdf4e3;
 }
 
 aside {
-    grid-area: side;
-    margin-right: 0.5rem;
+  grid-area: side;
+  margin-right: 0.5rem;
 }
 
-.parallax {
-    perspective: 1px;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    /* background-color: #1FE37D; */
-    background: url(https://i.pinimg.com/originals/e3/1d/19/e31d19366d2c400560de49f26e7e7438.jpg) 100% 100% no-repeat;
-    /* Добавляем фон */
-    /* Full height */
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
-.parallax__layer {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-}
-
-.parallax__layer__base {
-    transform: translateZ(0);
-}
-
-.parallax__layer__back {
-    transform: translateZ(-1px);
-}
 </style>

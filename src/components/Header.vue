@@ -1,9 +1,26 @@
 <template>
-  <div class = "header__container">
-     <h2 class = "head">
-           Клуб настольного тенниса "Dream team"
-     </h2>
-     </div>
+ <header>
+      <div class="navbarHeader">
+          <ul class="navigationWrapper">
+                  <li class="nav-item ">
+                    <router-link to="/products" class="nav-link"
+                      >Товары</router-link
+                    >
+                  </li>
+                  <li class="nav-item ">
+                    <router-link class="nav-link" to="/rankings"
+                      >Рейтинг инвентаря</router-link
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <router-link class="nav-link" to="/"> Домой</router-link>
+                  </li>
+                  <li class="nav-item">
+                    <router-link class="nav-link" to="/bar">Baz</router-link>
+                  </li>
+                </ul>
+        </div>
+    </header>
 </template>
 
 <script>
@@ -13,32 +30,38 @@ export default {
 </script>
 
 <style>
-.head {
-    background: -moz-linear-gradient(top, red, FFFFFF);
-    background: -webkit-gradient(linear, left top, left bottom, from(red), to(white));
-    padding: 25px;
-    margin-top: 0;
-    margin-bottom: 0;
-    text-align: center;
-    width: 100%;
-    -moz-box-shadow: 1px 1px 3px #292929;
-    -webkit-box-shadow: 1px 1px 3px #292929;
-    box-shadow: 1px 1px 3px #292929;
-    color: #454545;
-    text-shadow: 0 1px 0 white;
+
+
+.navbarHeader {
+    background-color: blue;
+  
 }
 
-.loginBlock {
-    text-align: right
+.navigationWrapper{
+  display: flex;
+  position:sticky;
+  background-color: rgb(41, 38, 38);
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+  
 }
 
-.header__container {
-    top: 0;
-    display: flex;
-    position: sticky;
-    background: #6699FF;
-    padding-top: 0;
-    font-family: helvetica, arial, sans-serif;
+.navigationWrapper > li >a {
+  color: gold;
 }
+
+.navigationWrapper > li > a:hover {
+  cursor: pointer;
+  color:  red;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  position: fixed
+}
+
+
 </style>
 
