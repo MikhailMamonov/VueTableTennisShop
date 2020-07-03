@@ -1,27 +1,22 @@
-<template>
+<template >
   <div id="app">
-              <Header />
-              
+    <Header />
     <div class="app_wrapper">
-
       <nav>
         <div class="well">
           <div class="google-translate-sidebar__title">
-            <img
-              src="/images/layout/language-icon.png"
-              class="google-translate-sidebar-icon"
-            />
-            Translate
+            <img src="/images/layout/language-icon.png" class="google-translate-sidebar-icon" />
+            <p>Translate</p>
           </div>
         </div>
       </nav>
       <main>
         <router-view></router-view>
       </main>
-      <footer>
-        <Footer />
-      </footer>
+
     </div>
+         <Footer />
+  
   </div>
 </template>
 
@@ -34,16 +29,18 @@ export default {
   name: "App",
   components: {
     Header,
-    Footer,
+    Footer
     // Navbar
-  },
+  }
 };
 </script>
 
 <style>
-body {
+
+html, body {
+  height: 100%;
   margin: 0;
-  background-color: #fff;
+  background-color: white;
 }
 
 .well {
@@ -63,33 +60,13 @@ body {
 .app_wrapper {
   display: grid;
   height: 100%;
-  grid-template-areas: "header header" "nav content" "footer footer ";
+  grid-template-areas: "header header" "nav content" ;
   grid-template-columns: 250px 1fr;
-  grid-template-rows: 50px auto 50px;
+  grid-template-rows: 50px auto ;
   background-color: #fff;
+
 }
 
-
-
-footer {
-  grid-area: footer;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(red),
-    to(white)
-  );
-  padding: 5px;
-  margin-top: 0;
-  margin-bottom: 0;
-  text-align: center;
-  width: 100%;
-  display: inline-block;
-  box-shadow: 1px 1px 3px #292929;
-  color: #454545;
-  text-shadow: 0 1px 0 white;
-}
 
 
 nav {
@@ -107,6 +84,4 @@ aside {
   grid-area: side;
   margin-right: 0.5rem;
 }
-
-
 </style>

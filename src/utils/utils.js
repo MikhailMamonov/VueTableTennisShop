@@ -4,7 +4,7 @@ export default {
     timeout: null,
   
     isUpdateItems (text) {
-      debugger;
+      
       if (text.length >= this.minLen) {
         return true
       }

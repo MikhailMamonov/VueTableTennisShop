@@ -32,7 +32,7 @@ export default {
       searchText: '',
       showList: false,
       cursor: -1,
-      internalItems: this.items || []
+      internalItems: this.searchItems || []
     }
   },
     props: {
@@ -54,16 +54,17 @@ export default {
   },
    computed: {
     hasItems () {
+      
       return !!this.internalItems.length
     },
     show () {
-      debugger;
+      
       return (this.showList && this.hasItems) || this.keepOpen
     }
   },
   methods:{
       inputChange () {
-      debugger;
+      
       this.showList = true
       this.cursor = -1
       this.onSelectItem(null, 'inputChange')
@@ -72,7 +73,7 @@ export default {
     },
 
     updateItems () {
-      debugger;
+      
       this.$emit('update-searchItems', this.searchText)
     },
 
@@ -92,7 +93,7 @@ export default {
     },
 
     onSelectItem (item) {
-      debugger;
+      
       if (item) {
         this.internalItems = [item]
         this.searchText = this.getLabel(item)
@@ -104,11 +105,12 @@ export default {
     },
 
     setItems (items) {
-      debugger;
+      
       this.internalItems = items || []
     },
 
     isSelectedValue (value) {
+      
       return 1 == this.internalItems.length && value == this.internalItems[0]
     },
 
@@ -140,14 +142,13 @@ export default {
     }
   },
   created () {
-    debugger;
     utils.minLen = this.minLen
     utils.wait = this.wait
     this.onSelectItem(this.value)
   },
   watch: {
     items (newValue) {
-          debugger;
+          
       this.setItems(newValue)
       let item = utils.findItem(this.items, this.searchText, this.autoSelectOneItem)
       if (item) {
@@ -164,7 +165,7 @@ export default {
 }}
 </script>
 
-<style>
+<style lang="stylus">
 
 .v-autocomplete {
     position: relative;

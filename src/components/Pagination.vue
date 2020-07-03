@@ -75,7 +75,7 @@ props: {
   },
   methods: {
     selectCategory: function(event, id) {
-     debugger;
+
       this.$store.commit("setCategory", id);
       this.$store.commit("setBrand", 0);
 

@@ -1,8 +1,7 @@
-<template >
-<div>
-  {{item.id}}
-  {{ item.label }}
-  </div>
+<template lang="pug">
+div
+  b \#{{item.id}}
+  span  {{ item.label }}
 </template>
 
 <script>
