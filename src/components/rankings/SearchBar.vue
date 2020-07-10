@@ -147,7 +147,7 @@ export default {
     this.onSelectItem(this.value)
   },
   watch: {
-    items (newValue) {
+    searchItems (newValue) {
           
       this.setItems(newValue)
       let item = utils.findItem(this.items, this.searchText, this.autoSelectOneItem)
@@ -171,7 +171,7 @@ export default {
     position: relative;
   }
   .v-autocomplete .v-autocomplete-list {
-    position: absolute;
+    position: relative;
   }
   .v-autocomplete .v-autocomplete-list .v-autocomplete-list-item {
     cursor: pointer;

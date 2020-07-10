@@ -10,14 +10,15 @@
         </ul>
         <div><button> Most Popular
           </button>
-          <button> Sort by Ranking
+          <button @click="gotoStats($event, category.id)"> Sort by Ranking
             </button></div>
       </div>
 </template>
 
 <script>
 export default {
-name: "character-name-table",
+name: "character-rank-table",
+props: ["category"],
 data(){
       return {
       charachters:[
@@ -30,6 +31,11 @@ data(){
         { id: 7, name: "Hardest Sponge	", winner:"Andro Blowfish", value: 9.5  },
         { id: 8, name: "Softest Sponge", winner:"Andro Blowfish", value: 9.5  }
       ]}
+},
+methods:{
+  gotoStats: function(event, categoryId){
+  this.$router.push({ name: 'rankingByStats', params: { categoryId: categoryId }})
+  }
 }}
 </script>
 

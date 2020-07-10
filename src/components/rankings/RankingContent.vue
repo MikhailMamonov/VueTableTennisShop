@@ -2,7 +2,7 @@
   <div class="rankingContentWrapper">
     <h1>{{ category.name }} Review</h1>
 
-    <character-name-table></character-name-table>
+    <character-rank-table :category="category"></character-rank-table>
 
     <div class="recentlyRelatedGrid">
       <h2>Recently Rated...</h2>
@@ -36,13 +36,13 @@
     </div>
 <div class="searchBlock">
     <brand-lists-catalog :brands="brands"></brand-lists-catalog>
-    <search-bar :searchItems="searchItems" v-model="searchItem" :minLen="0" @update-searchItems="update" :get-label="getLabel" @item-selected="searchItemSelected" @item-clicked="searchItemClicked"    :componentItem="tpl" :input-attrs="{ name: 'input-test', placeholder:'butterfly feint?',  id: 'v-my-autocomplete' }"></search-bar>
+    <search-bar :searchItems="searchItems" v-model="searchItem" :minLen="0" :get-label="getLabel" @update-searchItems="update"  @item-selected="searchItemSelected" @item-clicked="searchItemClicked"    :componentItem="tpl" :input-attrs="{ name: 'input-test', placeholder:'butterfly feint?',  id: 'v-my-autocomplete' }"></search-bar>
     </div>
   </div>
 </template>
 
 <script>
-import CharacterNameTable from "./../rankings/CharacterRankTable";
+import CharacterRankTable from "./../rankings/CharacterRankTable";
 import BrandListsCatalog from "./../rankings/BrandListsCatalog";
 import SearchBar from "./../rankings/SearchBar";
 import tplItem from "./TplSearcItem";
@@ -75,7 +75,7 @@ export default {
     };
   },
   props: ["category"],
-  components: { CharacterNameTable, BrandListsCatalog, SearchBar },
+  components: { CharacterRankTable, BrandListsCatalog, SearchBar },
   methods: {
     searchItemselected(item) {
       console.log("Selected item!", item);
@@ -95,7 +95,7 @@ export default {
     update(text) {
       
       this.searchItems = this.$store.state.products.filter(item => {
-        return new RegExp(text.toLowerCase()).test(item.label.toLowerCase());
+        return item.label.toLowerCase().includes(text.toLowerCase());
       });
       
     }
@@ -164,6 +164,7 @@ div.dbcat {
 .searchBlock{
   background-color: green;
   display: flex;
+  justify-content: space-around;
 }
 
 

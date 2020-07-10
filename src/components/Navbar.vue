@@ -3,8 +3,10 @@
     <li>
           <router-link to="/products"> Товары</router-link>
   </li>
-    <li>
-    <router-link to="/rankings">Рейтинг инвентаря</router-link>
+      <!-- Dropdown menu -->
+        <li class="nav-item">
+            <router-link to="/rankings">Рейтинг инвентаря</router-link>
+          
     </li>
     
     <li>
@@ -61,4 +63,5 @@ export default {
 .sidebar__nav li a:focus {
   text-decoration: none;
 }
+
 </style>  
