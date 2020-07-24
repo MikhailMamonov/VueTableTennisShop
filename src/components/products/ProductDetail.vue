@@ -33,35 +33,36 @@ export default {
 }
 </script>
 
-<style>
+<style lang= "scss">
+
 .product__container{
   display: flex;
-   flex-direction: column;
+  flex-direction: column;
   justify-content: center;
-align-items: center;
-}
+  align-items: center;
 
-.product__container img{
-  width: 200px;
-  height: 200px;
-}
+  img{
+    width: 200px;
+    height: 200px;
+  }
 
-.product__container p{
-  font-family: "Myriad Pro", "sans-serif";
-  font-size: 20px;
-  margin: 10px;
-  padding: 20px;
-  color: #BE2D0F;
-}
+  p{
+    font-family: "Myriad Pro", "sans-serif";
+    font-size: 20px;
+    margin: 10px;
+    padding: 20px;
+    color: #BE2D0F;
+  }
 
-.product__container button{
-  align-self: flex-end;
-  background-color: aquamarine;
-  font-size: 50px;
-}
+  button{
+    align-self: flex-end;
+    background-color: aquamarine;
+    font-size: 50px;
 
-.product__container button:hover{
-  background-color: blue;
+    &:hover{
+    background-color: blue;
+  }
+  }
 }
 
 </style>

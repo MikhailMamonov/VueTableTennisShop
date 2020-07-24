@@ -40,39 +40,40 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .product__wrapper {
   text-align: center;
   overflow-y: scroll;
   position: absolute;
   display: contents;
-}
 
-.content__main {
-  height: 100%;
-  list-style-type: none;
-  background: rgb(204, 227, 238);;
-  text-align: center;
-  margin-left: 0;
-  margin-top: 100px;
-  padding-left: 0;
-  list-style: none;
-  display: flex;
-  height: fit-content;
-  margin: 0;
-  padding: 0;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
+  .content__main {
+    height: 100%;
+    list-style-type: none;
+    background: rgb(204, 227, 238);;
+    text-align: center;
+    margin-left: 0;
+    margin-top: 100px;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 
-.content__main li {
-  display: inline-flex;
-  margin: 20px;
-  border-color: red;
-  border-radius: 15px;
-  border: 1px solid red;
-  position: inherit;
+    li {
+      display: inline-flex;
+      margin: 20px;
+      border-color: red;
+      border-radius: 15px;
+      border: 1px solid red;
+      position: inherit;
+    }
+
+  }
 }
 
 </style>

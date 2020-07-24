@@ -28,28 +28,30 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang = "scss" scoped>
 .product {
     background-color: greenyellow;
+    &:hover {
+        background-color:aqua;
+    }
+    .product__content {
+        height: 400px;
+        width: 400px;
+
+        img {
+            margin-top: 75px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
 }
 
-.product:hover {
-    background-color:aqua;
-}
-
-.product__content {
-    height: 400px;
-    width: 400px;
-}
 
 
-.product__content img {
-    margin-top: 75px;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 </style>

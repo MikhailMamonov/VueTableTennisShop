@@ -62,11 +62,11 @@ html, body {
   height: 100%;
   grid-template-areas: "header header" "nav content" ;
   grid-template-columns: 250px 1fr;
-  grid-template-rows: 50px auto ;
+  grid-template-rows: 90px auto ;
   background-color: #fff;
 
 }
-
+ 
 
 
 nav {

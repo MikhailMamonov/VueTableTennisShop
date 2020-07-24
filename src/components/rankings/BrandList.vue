@@ -45,20 +45,23 @@ export default {
 }
 </script>
 
-<style>
+<style lang= "scss">
 .toggle-item {
     background-color: brown;
+
+    ul {
+        list-style: none;
+        background-color: #BFD3DE;
+        li{
+            &:hover {
+                cursor: pointer;
+                color: red;
+            }
+        }
+    }
 }
 
-.toggle-item>ul {
-    list-style: none;
-    background-color: #BFD3DE;
-}
 
-.toggle-item>ul>li:hover {
-    cursor: pointer;
-    color: red;
-}
 
 .btn-toggle:hover {
     cursor: pointer;

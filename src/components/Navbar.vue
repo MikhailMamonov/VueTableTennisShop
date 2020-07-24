@@ -30,7 +30,7 @@ export default {
 };
 </script>
 
-        <style>
+        <style lang="scss">
 .sidebar__nav {
   width: 250px;
   margin: 0;
@@ -40,28 +40,26 @@ export default {
   height: 700px;
   position: sticky;
   top: 80px;
-}
-
-.sidebar__nav li {
+  li {
   text-indent: 20px;
   line-height: 40px;
-}
-
-.sidebar__nav li a {
-  display: block;
-  text-decoration: none;
-  color: #999999;
-}
-
-.sidebar__nav li a:hover {
-  text-decoration: none;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.sidebar__nav li a:active,
-.sidebar__nav li a:focus {
-  text-decoration: none;
+    a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+    &:hover {
+      text-decoration: none;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.2);
+      }
+    &:active {
+      text-decoration: none;
+    }
+    &:focus {
+      text-decoration: none;
+      }
+    }
+  }
 }
 
 </style>  

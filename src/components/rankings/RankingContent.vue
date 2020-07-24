@@ -1,7 +1,7 @@
 <template >
   <div class="rankingContentWrapper">
-    <h1>{{ category.name }} Review</h1>
-
+    <h1>{{ category.text }} Review</h1>
+    
     <character-rank-table :category="category"></character-rank-table>
 
     <div class="recentlyRelatedGrid">
@@ -21,6 +21,8 @@
         </li>
       </ul>
     </div>
+
+    
 
     <div class="category-page-buttons">
       <a class="btn btn-primary btn-shrink-xxs" href="../add-product.php?type=pips">
@@ -74,10 +76,21 @@ export default {
       }
     };
   },
-  props: ["category"],
   components: { CharacterRankTable, BrandListsCatalog, SearchBar },
+  computed: {
+      categoryId () {
+                    return +this.$route.params.categoryId;
+                },
+      category () {
+                  return this.$store.getters.getCategoryById(this.categoryId); 
+                },
+      productsByCategory(){
+        
+        return this.$store.getters.getProductsByCategoryId(this.categoryId); 
+      }
+            },
   methods: {
-    searchItemselected(item) {
+    searchItemSelected(item) {
       console.log("Selected item!", item);
     },
     searchItemClicked(item) {
@@ -93,7 +106,7 @@ export default {
     },
 
     update(text) {
-      
+      debugger;
       this.searchItems = this.$store.state.products.filter(item => {
         return item.label.toLowerCase().includes(text.toLowerCase());
       });
@@ -103,16 +116,16 @@ export default {
 };
 </script>
 
-<style>
+<style lang ="scss">
 .recentlyRelatedGrid {
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(to bottom, #ffffff 0%, #d6d6d6 100%);
-}
-
-.recentlyRelatedGrid > ul > li > * {
+  ul > li > * {
   display: inline-block;
 }
+}
+
 
 .btn-group {
   margin-left: 20px;

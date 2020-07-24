@@ -1,11 +1,14 @@
 <template>
    <div class="characterTable__wrapper">
       <ul class="contentGrid__table">
-        <li v-for="i in charachters" :key="i.id">
+        <li v-for="i in charachtersByProducts" :key="i.id">
           <div>{{i.name}}</div>
           <div>{{i.winner}}</div>
           <div>{{i.value}}/10</div>
-          <a href="">more...</a>
+          <router-link class="nav-link" :to="{ name: 'rankingByStatsWithCharacter', params: { categoryId:category.id, charachterId:i.id }}" >
+            More..
+          </router-link>
+           
         </li>
         </ul>
         <div><button> Most Popular
@@ -14,6 +17,8 @@
             </button></div>
       </div>
 </template>
+
+
 
 <script>
 export default {
@@ -32,30 +37,62 @@ data(){
         { id: 8, name: "Softest Sponge", winner:"Andro Blowfish", value: 9.5  }
       ]}
 },
+computed:{
+
+  productsByCategory(){     
+        return this.$store.getters.getProductsByCategoryId(this.category.id); 
+  },
+
+charachtersByProducts() { 
+  var newChars = this.charachters;
+  console.log('1',this.productsByCategory[1])
+  console.log('length',this.productsByCategory.length)
+  console.log('all', this.productsByCategory)
+
+  if ( this.productsByCategory.length<8)
+  {
+    console.log("less then 8")
+    newChars=newChars.slice(0,this.productsByCategory.length)
+  }
+
+console.log("current", newChars.length)
+  newChars.forEach( char => 
+  char.winner = this.productsByCategory[char.id-1].label);
+
+console.log('result',newChars)
+return newChars;
+}
+},
 methods:{
   gotoStats: function(event, categoryId){
-  this.$router.push({ name: 'rankingByStats', params: { categoryId: categoryId }})
+  this.$router.push({ name: 'rankingByStats', params: { categoryId: categoryId}})
   }
 }}
 </script>
 
-<style>
+<style lang="scss">
 
+
+$green: green;
+$margin: 16px;
 
 .contentGrid__table{
   display: flex;
   flex-direction: column;
-  background-color:cadetblue;
+  background-color:$green;
+
+   li {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    flex-wrap: nowrap;
+
+    * {
+      width: 100%;
+    }
+  }
 }
 
-.contentGrid__table > li {
-  display: flex;
-  flex-direction: row;
-  align-content: space-around;
-  flex-wrap: nowrap;
-}
 
-.contentGrid__table > li > *{
-  width: 40%;
-}
+
 </style>
